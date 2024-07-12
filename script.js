@@ -3,6 +3,7 @@ const playerHand = document.getElementById('player-hand');
 const drawButton = document.getElementById('draw-btn');
 
 let playerDominos = [];
+let firstRound = true;
 
 // Function to create a domino tile
 function createDomino(value1, value2) {
@@ -33,13 +34,25 @@ function placeDomino(domino) {
     const value1 = domino.getAttribute('data-value1');
     const value2 = domino.getAttribute('data-value2');
     
-    // Check if the board is empty or if the domino can be placed
-    if (board.children.length === 0 || canPlaceDomino(value1, value2)) {
-        board.appendChild(domino);
-        playerDominos = playerDominos.filter(d => d !== domino);
-        playerHand.removeChild(domino);
+    // If it's the first round, enforce 6|6 as the starting domino
+    if (firstRound) {
+        if (value1 === '6' && value2 === '6') {
+            board.appendChild(domino);
+            playerDominos = playerDominos.filter(d => d !== domino);
+            playerHand.removeChild(domino);
+            firstRound = false; // End the first round after placing the first domino
+        } else {
+            alert("You must place 6|6 as the opening domino!");
+        }
     } else {
-        alert("You can't place this domino here!");
+        // Check if the domino can be placed on the board
+        if (canPlaceDomino(value1, value2)) {
+            board.appendChild(domino);
+            playerDominos = playerDominos.filter(d => d !== domino);
+            playerHand.removeChild(domino);
+        } else {
+            alert("You can't place this domino here!");
+        }
     }
 }
 
