@@ -1,0 +1,44 @@
+/* Existing styles remain unchanged */
+
+.game-board {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 150px; /* Adjust height as needed */
+  background-color: #d3d3d3; /* Light gray */
+}
+
+.card {
+  width: 50px;
+  height: 100px;
+  background-color: white;
+  border: 1px solid black;
+  margin: 0 5px;
+}
+
+.card.playable {
+  background-color: lightgreen;
+}
+
+.board-tile {
+  width: 50px;
+  height: 100px;
+  background-color: #f0f0f0;
+  border: 1px solid black;
+  display: inline-block;
+  text-align: center;
+  line-height: 100px;
+  margin: 0 5px;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 5px; /* Space between columns */
+}
+
+.klop{
+    margin: 6px;
+}

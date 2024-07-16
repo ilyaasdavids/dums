@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domino Game</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domino Game</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Domino Game</h1>
-    </header>
-    <main>
-        <div class="container">
-            <div id="player-hand"></div>
-            <div id="board"></div>
-        </div>
-        <button id="draw-btn">Draw Domino</button>
-    </main>
-    <footer>
-        <p>&copy; 2024 Domino Game</p>
-    </footer>
-    <script src="script.js"></script>
+<div class="game-container">
+  <div class="player" id="player1">
+    <h2>Player 1</h2>
+    <div class="hand" id="player1-hand"></div>
+    <button class="klop">KLOP!</button>
+  </div>
+  <div class="player" id="player2">
+    <h2>Player 2</h2>
+    <div class="hand" id="player2-hand"></div>
+    <button class="klop">KLOP!</button>
+  </div>
+</div>
+
+<div class="game-board" id="game-board"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
